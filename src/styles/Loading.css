@@ -1,0 +1,26 @@
+/* Loading.css */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    opacity: 1;
+    transition: opacity 1s ease-in-out; /* Transition for fading */
+    background-color: #000000; /* Black background */
+  }
+  
+  .loading-container.fade-out {
+    opacity: 0;
+  }
+  
+  .loading-image,
+  .loading-logo {
+    max-width: 20%;
+    max-height: 20%;
+  }
+  
+  .loading-image {
+    margin-bottom: 20px; /* Space between the images */
+  }
+  

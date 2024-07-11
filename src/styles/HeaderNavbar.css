@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:white;
+  padding: 1rem;
+  font-family: 'Roboto';
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  margin-left: 10px;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  position: relative;
+  font-family: 'Poppins';
+  cursor: pointer; /* Set cursor to pointer */
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: black;
+  transition: width 0.4s ease;
+  -webkit-transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+  background-color: #79624f;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  left: 0;
+  background-color: #79624f;
+}
+
+.navbar-icon img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
