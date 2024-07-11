@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d88002fa.chunk.css",
+    "main.js": "/static/js/main.fa5918fa.chunk.js",
+    "main.js.map": "/static/js/main.fa5918fa.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9aa2bcd1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9aa2bcd1.js.map",
+    "static/js/2.03c76f58.chunk.js": "/static/js/2.03c76f58.chunk.js",
+    "static/js/2.03c76f58.chunk.js.map": "/static/js/2.03c76f58.chunk.js.map",
+    "static/js/3.54ad877e.chunk.js": "/static/js/3.54ad877e.chunk.js",
+    "static/js/3.54ad877e.chunk.js.map": "/static/js/3.54ad877e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.d88002fa.chunk.css.map": "/static/css/main.d88002fa.chunk.css.map",
+    "static/js/2.03c76f58.chunk.js.LICENSE.txt": "/static/js/2.03c76f58.chunk.js.LICENSE.txt",
+    "static/media/AJTraders.e61df732.png": "/static/media/AJTraders.e61df732.png",
+    "static/media/IslandJute.50377942.png": "/static/media/IslandJute.50377942.png",
+    "static/media/compost.a7994303.png": "/static/media/compost.a7994303.png",
+    "static/media/energy-saving.d3d15f57.png": "/static/media/energy-saving.d3d15f57.png",
+    "static/media/juteculture.b6576c6f.jpg": "/static/media/juteculture.b6576c6f.jpg",
+    "static/media/juteimg.fdc3540e.jpg": "/static/media/juteimg.fdc3540e.jpg",
+    "static/media/natural-resources.a4776ced.png": "/static/media/natural-resources.a4776ced.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9aa2bcd1.js",
+    "static/js/2.03c76f58.chunk.js",
+    "static/css/main.d88002fa.chunk.css",
+    "static/js/main.fa5918fa.chunk.js"
+  ]
+}
