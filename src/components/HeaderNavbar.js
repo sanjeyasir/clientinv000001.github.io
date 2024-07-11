@@ -4,6 +4,7 @@ import '../styles/HeaderNavbar.css';
 import { Card, CardContent, Typography,Hidden, AppBar, Toolbar} from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import ListAltIcon from '@mui/icons-material/ListAlt';
+import CallIcon from '@mui/icons-material/Call';
 import WorkIcon from '@mui/icons-material/Work';
 import ChatIcon from '@mui/icons-material/Chat';
 import MailIcon from '@mui/icons-material/Mail';
@@ -44,6 +45,13 @@ const HeaderNavbar = () => {
                 Products
               </a>
               
+              <a
+                className={location.pathname === '/clientinv000001.github.io/contacts' ? 'active' : ''}
+                onClick={() => handleNavLinkClick('/contacts')}
+                style={{ textDecoration: 'none', color: 'black', margin: '0 10px' }}
+              >
+                Contact
+              </a>
              
             </Hidden>
 
@@ -57,6 +65,11 @@ const HeaderNavbar = () => {
                 className={location.pathname === '/clientinv000001.github.io/products' ? 'active' : ''}
                 onClick={() => handleNavLinkClick('/products')}
                 style={{ color: location.pathname === '/clientinv000001.github.io/products' ? 'black' : 'gray', cursor: 'pointer', margin: '0 10px' }}
+              />
+              <CallIcon
+                className={location.pathname === '/clientinv000001.github.io/contacts' ? 'active' : ''}
+                onClick={() => handleNavLinkClick('/contacts')}
+                style={{ color: location.pathname === '/clientinv000001.github.io/contacts' ? 'black' : 'gray', cursor: 'pointer', margin: '0 10px' }}
               />
              
             

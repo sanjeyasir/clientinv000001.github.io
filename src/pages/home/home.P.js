@@ -7,7 +7,6 @@ import { Contact, Details,  FeaturedProducts,  Journey, SuccessStory, WhatWeOffe
 
 const Home = () => {
 
-  
     return (
       <>
        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
@@ -38,6 +37,7 @@ const Home = () => {
       
       </>
     );
-  }
+  
+}
 
 export default Home;

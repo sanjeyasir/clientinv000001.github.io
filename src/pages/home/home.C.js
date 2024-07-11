@@ -7,9 +7,8 @@ import jutcompostimg from '../../assets/compost.png';// credits:https://www.clim
 import jutenergyimg from '../../assets/energy-saving.png';// credits:https://www.climatelinks.org/photo-gallery/jute-cultivation
 import jutcultureimg from '../../assets/juteculture.jpg';// credits:https://www.climatelinks.org/photo-gallery/jute-cultivation
 import { useNavigate } from 'react-router-dom';
-import { Facebook, Twitter, LinkedIn, Instagram } from '@mui/icons-material';
 import '../../styles/Home.css';
-import islandjuteimg from '../../assets/IslandJute.png';
+import islandjuteimg from '../../assets/AJTraders.png';
 {/* <a href="https://www.flaticon.com/free-icons/energy-saving" title="energy saving icons">Energy saving icons created by rsetiawan - Flaticon</a> */}
 
 
@@ -113,7 +112,6 @@ const Details = () => {
     </Box>
   );
 };
-
 
 const WhatWeOffer = () => {
   
@@ -745,30 +743,39 @@ const FeaturedProducts = () => {
   );
 };
 
-
-
 const Contact = () => {
   return (
     <Box sx={{ backgroundColor: '#333', color: '#fff', padding: '30px' }}>
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={4}>
           <Box>
-            <Typography variant="h6" gutterBottom>Contact Us</Typography>
-            <Typography variant="body2">AJ Traders</Typography>
-            <Typography variant="body2">26, Nagalagam Street, Colombo 14, Sri Lanka</Typography>
-            <Typography variant="body2">0112 332 087</Typography>
-            <Typography variant="body2">Since 1987</Typography>
+            <Typography variant="h6" style={{fontFamily:'poppins', marginBottom:'3px'}} gutterBottom>Contact Us</Typography>
+            <Typography variant="body2" style={{fontFamily:'poppins', marginBottom:'3px'}} >AJ Traders</Typography>
+            <Typography variant="body2" style={{fontFamily:'poppins', marginBottom:'3px'}} >26, Nagalagam Street, Colombo 14, Sri Lanka</Typography>
+            <Typography variant="body2" style={{fontFamily:'poppins', marginBottom:'3px'}} >0112 332 087</Typography>
+            <Typography variant="body2" style={{fontFamily:'poppins', marginBottom:'3px'}} >Since 1987</Typography>
           </Box>
         </Grid>
         <Grid item xs={12} md={4}>
           <Box>
-            <Typography variant="h6" gutterBottom>Quick Links</Typography>
-            <Box>
-              <Link href="/" color="inherit" underline="none">Home</Link><br />
-              <Link href="/products" color="inherit" underline="none">Products</Link><br />
-              <Link href="/blog" color="inherit" underline="none">Blog</Link><br />
-              <Link href="/contact" color="inherit" underline="none">Contact</Link>
-            </Box>
+          <Box>
+            <Typography variant="h6" style={{ fontFamily: 'Poppins', marginBottom: '3px' }} gutterBottom>
+              Quick Links
+            </Typography>
+            <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
+              <a href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</a>
+            </Typography>
+            <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
+              <a href="/products" style={{ color: 'inherit', textDecoration: 'none' }}>Products</a>
+            </Typography>
+            <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
+              <a href="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Blog</a>
+            </Typography>
+            <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
+              <a href="/contact" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a>
+            </Typography>
+          </Box>
+
           </Box>
         </Grid>
         <Grid item xs={12} md={4}>
@@ -791,7 +798,7 @@ const Contact = () => {
         </Grid>
       </Grid>
       <Box sx={{ marginTop: '20px', textAlign: 'center' }}>
-        <Typography variant="body2">
+        <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
           &copy; {new Date().getFullYear()} AJ Traders. All rights reserved.
         </Typography>
       </Box>

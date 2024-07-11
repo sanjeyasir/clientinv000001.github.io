@@ -1,6 +1,6 @@
 // Loading.js
 import React from 'react';
-import islandjuteimg from '../../assets/IslandJute.png';
+import islandjuteimg from '../../assets/AJTraders.png';
 import '../../styles/Loading.css'; // Import the CSS file
 
 const Loading = ({ fadeOut }) => {
