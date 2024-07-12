@@ -5,10 +5,6 @@ import { Card, CardContent, Typography,Hidden, AppBar, Toolbar} from '@mui/mater
 import HomeIcon from '@mui/icons-material/Home';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import CallIcon from '@mui/icons-material/Call';
-import WorkIcon from '@mui/icons-material/Work';
-import ChatIcon from '@mui/icons-material/Chat';
-import MailIcon from '@mui/icons-material/Mail';
-import islandjuteimg from '../assets/IslandJute.png';
 
 
 

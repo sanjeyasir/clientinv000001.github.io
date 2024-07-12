@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      {loading ? <Loading fadeOut={fadeOut} />  :<>
+      {/* {loading ? <Loading fadeOut={fadeOut} />  :<> */}
         <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -39,8 +39,8 @@ function App() {
         </Routes>
       </Router>
       
-      </>
-     }
+      {/* </> */}
+     {/* } */}
       
     </div>
   );
