@@ -10,7 +10,9 @@ import { useNavigate } from 'react-router-dom';
 import '../../styles/Home.css';
 import islandjuteimg from '../../assets/AJTraders.png';
 import { green, red } from '@mui/material/colors';
+import { makeStyles } from '@mui/styles';
 {/* <a href="https://www.flaticon.com/free-icons/energy-saving" title="energy saving icons">Energy saving icons created by rsetiawan - Flaticon</a> */}
+
 
 
 const Details = () => {
@@ -145,7 +147,7 @@ const ContactDetails = () => {
                 <a href="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Blog</a>
               </Typography>
               <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
-                <a href="/contact" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a>
+                <a href="/contacts" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a>
               </Typography>
             </Box>
   
@@ -179,13 +181,44 @@ const ContactDetails = () => {
     );
 };
 
+const useStyles = makeStyles(() => ({
+  card: {
+    margin: '16px',
+    padding: '16px',
+    background:'rgba(237,236,235,0.5)',
+    borderRadius:'25px'
+  },
+  heading: {
+    marginBottom: '16px',
+    fontFamily:'poppins'
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
+  },
+  submitButton: {
+    marginTop: '16px',
+    padding:'10px',
+    fontFamily:'poppins',
+    borderRadius:'20px',
+    borderWidth:'3px'
+  },
+  snackbarContent: {
+    backgroundColor: (snackbarType) =>
+      snackbarType === 'success' ? green[600] : red[600],
+  },
+}));
+
+
 const ContactForm = () => {
+  const classes = useStyles();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [snackbarType, setSnackbarType] = useState('success'); // success or error
+  const [snackbarType, setSnackbarType] = useState('success');
 
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
@@ -203,7 +236,7 @@ const ContactForm = () => {
         method: 'POST',
         body: data,
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
         },
       });
 
@@ -225,13 +258,17 @@ const ContactForm = () => {
   };
 
   return (
-    <Box>
-      <form
-        onSubmit={handleSubmit}
-        action="https://formspree.io/f/xeojooqv"
-        method="POST"
-      >
-        <div>
+    <Card className={classes.card} style={{marginTop:'100px', marginBottom:'80px'}}>
+      <CardContent>
+        <Typography variant="h5" className={classes.heading}>
+          Contact Us
+        </Typography>
+        <form
+          onSubmit={handleSubmit}
+          action="https://formspree.io/f/xeojooqv"
+          method="POST"
+          className={classes.form}
+        >
           <TextField
             label="Name"
             type="text"
@@ -242,8 +279,6 @@ const ContactForm = () => {
             fullWidth
             margin="normal"
           />
-        </div>
-        <div>
           <TextField
             label="Email"
             type="email"
@@ -254,8 +289,6 @@ const ContactForm = () => {
             fullWidth
             margin="normal"
           />
-        </div>
-        <div>
           <TextField
             label="Phone"
             type="tel"
@@ -265,8 +298,6 @@ const ContactForm = () => {
             fullWidth
             margin="normal"
           />
-        </div>
-        <div>
           <TextField
             label="Message"
             name="message"
@@ -278,13 +309,17 @@ const ContactForm = () => {
             rows={4}
             margin="normal"
           />
-        </div>
-        <Button type="submit" variant="contained" color="primary">
-          Submit
-        </Button>
-      </form>
+          <Button
+            type="submit"
+            variant="outlined"
+            color="primary"
+            className={classes.submitButton}
+          >
+            Submit
+          </Button>
+        </form>
+      </CardContent>
 
-      {/* Snackbar for showing submission status */}
       <Snackbar
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
         open={snackbarOpen}
@@ -292,9 +327,7 @@ const ContactForm = () => {
         onClose={handleCloseSnackbar}
       >
         <SnackbarContent
-          style={{
-            backgroundColor: snackbarType === 'success' ? green[600] : red[600],
-          }}
+          className={classes.snackbarContent}
           message={
             <Typography variant="body1" style={{ color: '#fff' }}>
               {snackbarType === 'success'
@@ -304,7 +337,7 @@ const ContactForm = () => {
           }
         />
       </Snackbar>
-    </Box>
+    </Card>
   );
 };
 

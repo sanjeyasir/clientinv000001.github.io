@@ -17,7 +17,7 @@ const Contact = () => {
 
           <Box sx={{ flex: 1 }}>
             <div>
-            <Details/>
+            {/* <Details/> */}
             </div>
             <div>
             <ContactForm/>

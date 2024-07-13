@@ -15,15 +15,10 @@ import islandjuteimg from '../../assets/AJTraders.png';
 const Details = () => {
   const navigate = useNavigate();
 
-  const handleSearch = (event) => {
-    if (event.key === 'Enter') {
-      const query = event.target.value;
-      window.open(`https://www.google.com/search?q=${query}`, '_blank');
-    }
-  };
+ 
 
   const handleContactClick = () => {
-    navigate('/contact');
+    navigate('/contacts');
   };
 
   return (
@@ -77,17 +72,11 @@ const Details = () => {
           </Typography>
 
           <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: '10px' }}>
-            <TextField 
-              variant="outlined" 
-              placeholder="Google Search" 
-              onKeyPress={handleSearch} 
-              fullWidth 
-              sx={{ marginBottom: { xs: '10px', md: 0 },fontFamily: 'Poppins',textDecoration: 'none',}}
-            />
             <Button 
-              variant="contained" 
-              color="primary" 
+              variant="outlined" 
+              color="success" 
               onClick={handleContactClick} 
+              style={{borderRadius:'25px', width:'200px',borderWidth:'3px'}}
               fullWidth
             >
               <Typography 
@@ -98,7 +87,7 @@ const Details = () => {
               color: 'black', 
               textDecoration: 'none',
               margin:'10px',
-              color:'white'
+              color:'black'
             }}
           >
              Contact Us
@@ -772,7 +761,7 @@ const Contact = () => {
               <a href="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Blog</a>
             </Typography>
             <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
-              <a href="/contact" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a>
+              <a href="/contacts" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a>
             </Typography>
           </Box>
 
