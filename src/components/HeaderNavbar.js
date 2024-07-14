@@ -5,6 +5,7 @@ import { Card, CardContent, Typography, Hidden, AppBar, Toolbar, IconButton, Inp
 import HomeIcon from '@mui/icons-material/Home';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import CallIcon from '@mui/icons-material/Call';
+import InfoIcon from '@mui/icons-material/Info';
 import islandjuteimg from '../assets/AJTraders.png';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -43,6 +44,13 @@ const HeaderNavbar = () => {
                 Home
               </a>
               <a
+                className={location.pathname == '/aboutus' ? 'active' : ''}
+                onClick={() => handleNavLinkClick('/aboutus')}
+                style={{ textDecoration: 'none',  color: location.pathname === '/aboutus' ? 'black' : 'gray',cursor: 'pointer', margin: '0 10px' }}
+              >
+                About Us
+              </a>
+              <a
                 className={location.pathname == '/products' ? 'active' : ''}
                 onClick={() => handleNavLinkClick('/products')}
                 style={{ textDecoration: 'none',  color: location.pathname === '/products' ? 'black' : 'gray',cursor: 'pointer', margin: '0 10px' }}
@@ -77,6 +85,11 @@ const HeaderNavbar = () => {
               className={location.pathname === '/' ? 'active' : ''}
               onClick={() => handleNavLinkClick('/')}
               style={{ color: location.pathname === '/' ? 'black' : 'gray', cursor: 'pointer', margin: '0 10px' }}
+            />
+            <InfoIcon
+              className={location.pathname === '/aboutus' ? 'active' : ''}
+              onClick={() => handleNavLinkClick('/aboutus')}
+              style={{ color: location.pathname === '/aboutus' ? 'black' : 'gray', cursor: 'pointer', margin: '0 10px' }}
             />
             <ListAltIcon
               className={location.pathname === '/products' ? 'active' : ''}

@@ -9,9 +9,9 @@ const Footer = () => {
   return (
     <div className="navbar">
 
-        <div style={{display:'flex', flexDirection:'row', alignContent:'center', alignItems:'center'}}>
+        <div style={{display:'flex', flexDirection:'row', alignContent:'center', alignItems:'center', backgroundColor:'white'}}>
 
-            <Typography variant="caption" style={{marginRight:'10px'}}>
+            <Typography variant="caption" style={{marginRight:'10px', padding:'5px'}}>
                 Powered by Mind Forger @ 2024
             </Typography>
            

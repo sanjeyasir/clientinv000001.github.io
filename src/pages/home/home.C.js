@@ -9,13 +9,18 @@ import jutcultureimg from '../../assets/juteculture.jpg';// credits:https://www.
 import { useNavigate } from 'react-router-dom';
 import '../../styles/Home.css';
 import islandjuteimg from '../../assets/AJTraders.png';
+import jutegunnybag from '../../assets/jutegunnybags.jpg';//https://www.ebay.com/itm/224593886268
+import jutehessianclothe from '../../assets/jutehessiancloth.jpg';//https://www.amazon.co.uk/1m-100-Natural-Hessian-Fabric/dp/B08BZV5WFN?th=1
+import juteyarn from '../../assets/juteyarn.jpg';//https://www.indiamart.com/proddetail/jute-yarn-19323820688.html
+
+
 {/* <a href="https://www.flaticon.com/free-icons/energy-saving" title="energy saving icons">Energy saving icons created by rsetiawan - Flaticon</a> */}
 
 
 const Details = () => {
   const navigate = useNavigate();
 
- 
+
 
   const handleContactClick = () => {
     navigate('/contacts');
@@ -101,6 +106,8 @@ const Details = () => {
     </Box>
   );
 };
+
+
 
 const WhatWeOffer = () => {
   
@@ -509,7 +516,7 @@ const FeaturedProducts = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/your-target-page'); // Replace with your target page path
+    navigate('/products'); // Replace with your target page path
   };
 
   return (
@@ -569,9 +576,9 @@ const FeaturedProducts = () => {
             }}
           >
             <img
-              src={jutimg}
+              src={jutegunnybag}
               style={{ width: '100%', height: '100%', objectFit: 'cover', border: '2px solid white', borderRadius: '10px' }}
-              alt="Featured Product"
+              alt="Gunny Bag"
             />
             <Box
               sx={{
@@ -599,8 +606,9 @@ const FeaturedProducts = () => {
                 }
               }}
             >
+              <img src={islandjuteimg} alt="Logo" style={{ height: '40px', width: '40px' }} />
               <Typography variant="h5" fontWeight="medium" sx={{ fontFamily: 'Poppins', mb: 2 }}>
-                Product Title
+                Jute Gunny Bags
               </Typography>
               <Button variant="contained" color="primary" onClick={handleButtonClick}>
                 <Typography variant="body2"  sx={{ fontFamily: 'Poppins', mb: 2, margin: '2px'}}>
@@ -628,9 +636,9 @@ const FeaturedProducts = () => {
             }}
           >
             <img
-              src={jutimg}
+              src={jutehessianclothe}
               style={{ width: '100%', height: '100%', objectFit: 'cover', border: '2px solid white', borderRadius: '10px' }}
-              alt="Featured Product"
+              alt="Jute Hessian Cloth"
             />
             <Box
               sx={{
@@ -658,8 +666,9 @@ const FeaturedProducts = () => {
                 }
               }}
             >
+               <img src={islandjuteimg} alt="Logo" style={{ height: '40px', width: '40px' }} />
               <Typography variant="h5" fontWeight="medium" sx={{ fontFamily: 'Poppins', mb: 2 }}>
-                Product Title
+                Jute Hessian Cloth
               </Typography>
               <Button variant="contained" color="primary" onClick={handleButtonClick}>
               <Typography variant="body2"  sx={{ fontFamily: 'Poppins', mb: 2, margin: '2px'}}>
@@ -687,7 +696,7 @@ const FeaturedProducts = () => {
             }}
           >
             <img
-              src={jutimg}
+              src={juteyarn}
               style={{ width: '100%', height: '100%', objectFit: 'cover', border: '2px solid white', borderRadius: '10px' }}
               alt="Featured Product"
             />
@@ -717,8 +726,9 @@ const FeaturedProducts = () => {
                 }
               }}
             >
+               <img src={islandjuteimg} alt="Logo" style={{ height: '40px', width: '40px' }} />
               <Typography variant="h5" fontWeight="medium" sx={{ fontFamily: 'Poppins', mb: 2 }}>
-                Product Title
+                Jute Yarn
               </Typography>
               <Button variant="contained" color="primary" onClick={handleButtonClick}>
               <Typography variant="body2"  sx={{ fontFamily: 'Poppins', mb: 2, margin: '2px'}}>
