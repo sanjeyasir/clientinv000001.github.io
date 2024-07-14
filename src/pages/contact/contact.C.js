@@ -119,6 +119,7 @@ const Details = () => {
 
 
 const ContactDetails = () => {
+  const navigate = useNavigate();
     return (
       <Box sx={{ backgroundColor: '#333', color: '#fff', padding: '30px'}}>
         <Grid container spacing={4} alignItems="center">
@@ -134,22 +135,25 @@ const ContactDetails = () => {
           <Grid item xs={12} md={4}>
             <Box>
             <Box>
-              <Typography variant="h6" style={{ fontFamily: 'Poppins', marginBottom: '3px' }} gutterBottom>
-                Quick Links
-              </Typography>
-              <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
-                <a href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</a>
-              </Typography>
-              <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
-                <a href="/products" style={{ color: 'inherit', textDecoration: 'none' }}>Products</a>
-              </Typography>
-              <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
-                <a href="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Blog</a>
-              </Typography>
-              <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
-                <a href="/contacts" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a>
-              </Typography>
-            </Box>
+            <Typography variant="h6" style={{ fontFamily: 'Poppins', marginBottom: '3px' }} gutterBottom>
+              Quick Links
+            </Typography>
+            <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
+              <a onClick={() =>navigate("/")} style={{ color: 'inherit', textDecoration: 'none', cursor:'pointer' }}>Home</a>
+            </Typography>
+            <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
+              <a onClick={() =>navigate("/aboutus")} style={{ color: 'inherit', textDecoration: 'none', cursor:'pointer' }}>About Us</a>
+            </Typography>
+            <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
+              <a onClick={() =>navigate("/products")} style={{ color: 'inherit', textDecoration: 'none',cursor:'pointer'  }}>Products</a>
+            </Typography>
+            <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
+              <a onClick={() =>navigate("/blog")} style={{ color: 'inherit', textDecoration: 'none',cursor:'pointer' }}>Blog</a>
+            </Typography>
+            <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
+              <a onClick={() =>navigate("/contacts")} style={{ color: 'inherit', textDecoration: 'none',cursor:'pointer' }}>Contact</a>
+            </Typography>
+          </Box>
   
             </Box>
           </Grid>

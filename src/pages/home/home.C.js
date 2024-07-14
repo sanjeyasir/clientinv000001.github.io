@@ -743,6 +743,7 @@ const FeaturedProducts = () => {
 };
 
 const Contact = () => {
+  const navigate = useNavigate();
   return (
     <Box sx={{ backgroundColor: '#333', color: '#fff', padding: '30px' }}>
       <Grid container spacing={4} alignItems="center">
@@ -762,16 +763,19 @@ const Contact = () => {
               Quick Links
             </Typography>
             <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
-              <a href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</a>
+              <a onClick={() =>navigate("/")} style={{ color: 'inherit', textDecoration: 'none', cursor:'pointer' }}>Home</a>
             </Typography>
             <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
-              <a href="/products" style={{ color: 'inherit', textDecoration: 'none' }}>Products</a>
+              <a onClick={() =>navigate("/aboutus")} style={{ color: 'inherit', textDecoration: 'none', cursor:'pointer' }}>About Us</a>
             </Typography>
             <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
-              <a href="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Blog</a>
+              <a onClick={() =>navigate("/products")} style={{ color: 'inherit', textDecoration: 'none',cursor:'pointer'  }}>Products</a>
             </Typography>
             <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
-              <a href="/contacts" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</a>
+              <a onClick={() =>navigate("/blog")} style={{ color: 'inherit', textDecoration: 'none',cursor:'pointer' }}>Blog</a>
+            </Typography>
+            <Typography variant="body2" style={{ fontFamily: 'Poppins', marginBottom: '3px' }}>
+              <a onClick={() =>navigate("/contacts")} style={{ color: 'inherit', textDecoration: 'none',cursor:'pointer' }}>Contact</a>
             </Typography>
           </Box>
 
