@@ -1,7 +1,7 @@
 // src/App.js
 import React, { useState, useEffect }  from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./pages/home/home.P";
 import ProductInformation from './pages/productInformation/productInformation.P';
 import Loading from './pages/loading/loading.P';
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* {loading ? <Loading fadeOut={fadeOut} />  :<> */}
+      {loading ? <Loading fadeOut={fadeOut} />  :<>
         <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -39,8 +39,8 @@ function App() {
         </Routes>
       </Router>
       
-      {/* </> */}
-     {/* } */}
+      </>
+      }
       
     </div>
   );
