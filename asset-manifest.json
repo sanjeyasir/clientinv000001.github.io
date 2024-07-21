@@ -1,18 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.2ea44bec.chunk.css",
-    "main.js": "/static/js/main.0aad7b58.chunk.js",
-    "main.js.map": "/static/js/main.0aad7b58.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.886053be.js",
-    "runtime-main.js.map": "/static/js/runtime-main.886053be.js.map",
-    "static/js/2.181dcfce.chunk.js": "/static/js/2.181dcfce.chunk.js",
-    "static/js/2.181dcfce.chunk.js.map": "/static/js/2.181dcfce.chunk.js.map",
-    "static/js/3.d79a4059.chunk.js": "/static/js/3.d79a4059.chunk.js",
-    "static/js/3.d79a4059.chunk.js.map": "/static/js/3.d79a4059.chunk.js.map",
+    "main.js": "/static/js/main.c81e8cc7.chunk.js",
+    "main.js.map": "/static/js/main.c81e8cc7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.47958b10.js",
+    "runtime-main.js.map": "/static/js/runtime-main.47958b10.js.map",
+    "static/js/2.223948fb.chunk.js": "/static/js/2.223948fb.chunk.js",
+    "static/js/2.223948fb.chunk.js.map": "/static/js/2.223948fb.chunk.js.map",
+    "static/js/3.90e08df0.chunk.js": "/static/js/3.90e08df0.chunk.js",
+    "static/js/3.90e08df0.chunk.js.map": "/static/js/3.90e08df0.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.2ea44bec.chunk.css.map": "/static/css/main.2ea44bec.chunk.css.map",
-    "static/js/2.181dcfce.chunk.js.LICENSE.txt": "/static/js/2.181dcfce.chunk.js.LICENSE.txt",
+    "static/js/2.223948fb.chunk.js.LICENSE.txt": "/static/js/2.223948fb.chunk.js.LICENSE.txt",
     "static/media/AJTraders.e61df732.png": "/static/media/AJTraders.e61df732.png",
+    "static/media/balingtwine.bd0bf8d3.png": "/static/media/balingtwine.bd0bf8d3.png",
+    "static/media/boppfilms.a3d8abdb.jpg": "/static/media/boppfilms.a3d8abdb.jpg",
     "static/media/bullock.png.40b75526.png": "/static/media/bullock.png.40b75526.png",
     "static/media/compost.a7994303.png": "/static/media/compost.a7994303.png",
     "static/media/energy-saving.d3d15f57.png": "/static/media/energy-saving.d3d15f57.png",
@@ -21,12 +23,15 @@
     "static/media/jutehessiancloth.acfadada.jpg": "/static/media/jutehessiancloth.acfadada.jpg",
     "static/media/juteimg.fdc3540e.jpg": "/static/media/juteimg.fdc3540e.jpg",
     "static/media/juteyarn.b1bf4a2d.jpg": "/static/media/juteyarn.b1bf4a2d.jpg",
-    "static/media/natural-resources.a4776ced.png": "/static/media/natural-resources.a4776ced.png"
+    "static/media/juteyarn163.0092e3f7.jpg": "/static/media/juteyarn163.0092e3f7.jpg",
+    "static/media/lenomeshbag.e1a8e95f.png": "/static/media/lenomeshbag.e1a8e95f.png",
+    "static/media/natural-resources.a4776ced.png": "/static/media/natural-resources.a4776ced.png",
+    "static/media/propylenebags.8f10ead9.jpg": "/static/media/propylenebags.8f10ead9.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.886053be.js",
-    "static/js/2.181dcfce.chunk.js",
+    "static/js/runtime-main.47958b10.js",
+    "static/js/2.223948fb.chunk.js",
     "static/css/main.2ea44bec.chunk.css",
-    "static/js/main.0aad7b58.chunk.js"
+    "static/js/main.c81e8cc7.chunk.js"
   ]
 }
