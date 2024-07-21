@@ -1,112 +1,149 @@
 
-import React, { useState } from 'react';
-import { Typography, Box, Card, Grid, Button, CardContent,TextField,Icon, Divider, Link } from '@mui/material';
+import React, { useState,useEffect } from 'react';
+import { Typography, Box, Card, Grid, Button, CardContent,TextField,Icon, Divider, Link,IconButton } from '@mui/material';
 import jutimg from '../../assets/juteimg.jpg';
-import jutnaturalresourcesimg from '../../assets/natural-resources.png';// credits:https://www.climatelinks.org/photo-gallery/jute-cultivation
-import jutcompostimg from '../../assets/compost.png';// credits:https://www.climatelinks.org/photo-gallery/jute-cultivation
-import jutenergyimg from '../../assets/energy-saving.png';// credits:https://www.climatelinks.org/photo-gallery/jute-cultivation
-import jutcultureimg from '../../assets/juteculture.jpg';// credits:https://www.climatelinks.org/photo-gallery/jute-cultivation
 import { useNavigate } from 'react-router-dom';
 import '../../styles/Home.css';
 import islandjuteimg from '../../assets/AJTraders.png';
 import jutegunnybag from '../../assets/jutegunnybags.jpg';//https://www.ebay.com/itm/224593886268
 import jutehessianclothe from '../../assets/jutehessiancloth.jpg';//https://www.amazon.co.uk/1m-100-Natural-Hessian-Fabric/dp/B08BZV5WFN?th=1
 import juteyarn from '../../assets/juteyarn.jpg';//https://www.indiamart.com/proddetail/jute-yarn-19323820688.html
+import propylenebags from '../../assets/propylenebags.jpg' //https://flexpack.com/product/white-standard-woven-polypropylene-bags-without-tie-strings/
+import boppfilms from '../../assets/boppfilms.jpg' //https://europlas.com.vn/en-US/blog-1/what-is-bopp-plastic-film-bopp-film-manufacturing-process
+import lenomeshbags from '../../assets/lenomeshbag.png' //https://europlas.com.vn/en-US/blog-1/what-is-bopp-plastic-film-bopp-film-manufacturing-process
+import balingtwine from '../../assets/balingtwine.png' //https://www.ehow.com/list_7343448_crafts-make-baling-twine.html
+import juteyarn163 from '../../assets/juteyarn163.jpg' //https://musajute.com/product/colour-jute-yarn/
 
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import bullock from '../../assets/bullock.png.png';//https://pixabay.com/vectors/bullock-cart-huge-pull-rural-33502/
 
 {/* <a href="https://www.flaticon.com/free-icons/energy-saving" title="energy saving icons">Energy saving icons created by rsetiawan - Flaticon</a> */}
 
-
 const Details = () => {
   const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [transitioning, setTransitioning] = useState(false);
 
+  const slides = [
+    {
+      title: 'Sustainable Jute Solutions for a Better Tomorrow 🌿',
+      description:
+        'We are a leading supplier of jute products, committed to providing sustainable and high-quality solutions for various industries. Our mission is to promote eco-friendly alternatives while ensuring customer satisfaction and value.',
+    },
+    {
+      title: 'Eco-friendly Packaging Solutions 🌍',
+      description:
+        'Our jute products are designed to provide sustainable packaging solutions for a wide range of industries. We focus on quality and environmental impact to meet your needs.',
+    },
+    {
+      title: 'Innovative Jute Products for Every Industry 💡',
+      description:
+        'Discover our innovative jute products that cater to various industries, offering durability and sustainability. Join us in making a positive impact on the environment.',
+    },
+  ];
 
+  const handlePrevClick = () => {
+    if (transitioning) return;
+    setTransitioning(true);
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
+    setTimeout(() => setTransitioning(false), 1000); // match the transition duration
+  };
 
-  const handleContactClick = () => {
-    navigate('/contacts');
+  const handleNextClick = () => {
+    if (transitioning) return;
+    setTransitioning(true);
+    setCurrentIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
+    setTimeout(() => setTransitioning(false), 1000); // match the transition duration
   };
 
   return (
-    <Box 
-      sx={{ 
-        position: 'relative', 
-        height: '100vh', 
-        backgroundImage: `url(${jutimg})`, 
-        backgroundSize: 'cover', 
+    <Box
+      sx={{
+        position: 'relative',
+        height: '100vh',
+        backgroundImage: `url(${jutimg})`,
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        backgroundBlendMode: 'darken',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'flex-end',
-        padding: '30px'
+        justifyContent: 'center',
+        padding: '30px',
+        overflow: 'hidden',
       }}
     >
-      <Card 
-        sx={{ 
-          maxWidth: { xs: '100%', md: '40%' }, 
-          backgroundColor: 'rgba(255, 255, 255, 0.8)', 
-          borderRadius: '10px',
-          padding: '20px'
+      <Box sx={{ position: 'absolute', left: 0 }}>
+        <IconButton onClick={handlePrevClick}>
+          <ArrowBackIosIcon style={{ color: 'white' }} />
+        </IconButton>
+      </Box>
+
+      <Box
+        sx={{
+          textAlign: 'center',
+          width: '100%',
+          opacity: transitioning ? 0 : 1,
+          transition: 'opacity 3s ease-in-out',
         }}
       >
-        <CardContent>
-          <Typography 
-            variant="h4" 
-            fontWeight="medium" 
-            sx={{ 
-              fontFamily: 'Poppins', 
-              fontSize: { xs: '2rem', md: '3rem' }, 
-              color: 'black', 
-              textDecoration: 'none' 
-            }}
-          >
-            Sustainable Jute Solutions for a Better Tomorrow 🌿
-          </Typography>
+        <Typography
+          variant="h3"
+          fontWeight="medium"
+          sx={{
+            fontFamily: 'Poppins',
+            fontSize: { xs: '2rem', md: '3rem' },
+            textDecoration: 'none',
+            marginBottom: '20px',
+            color: 'white',
+          }}
+        >
+          {slides[currentIndex].title}
+        </Typography>
 
-          <Typography 
-            variant="body2" 
-            fontWeight="medium" 
-            sx={{ 
-              fontFamily: 'Poppins',
-              color: 'black', 
-              textDecoration: 'none',
-              marginBottom: '20px' 
-            }}
-          >
-            We are a leading supplier of jute products, committed to providing sustainable and high-quality solutions for various industries. 
-            Our mission is to promote eco-friendly alternatives while ensuring customer satisfaction and value.
-          </Typography>
+        <Typography
+          variant="body1"
+          fontWeight="medium"
+          sx={{
+            fontFamily: 'Poppins',
+            textDecoration: 'none',
+            marginBottom: '20px',
+            color: 'white',
+          }}
+        >
+          {slides[currentIndex].description}
+        </Typography>
 
-          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: '10px' }}>
-            <Button 
-              variant="outlined" 
-              color="success" 
-              onClick={handleContactClick} 
-              style={{borderRadius:'25px', width:'200px',borderWidth:'3px'}}
-              fullWidth
-            >
-              <Typography 
-            variant="body2" 
-            fontWeight="medium" 
-            sx={{ 
+        <Button
+          variant="outlined"
+          color="success"
+          onClick={() => navigate('/contacts')}
+          style={{ borderRadius: '25px', borderWidth: '3px', color: 'white', borderColor: 'white' }}
+        >
+          <Typography
+            variant="body2"
+            fontWeight="medium"
+            sx={{
               fontFamily: 'Poppins',
-              color: 'black', 
               textDecoration: 'none',
-              margin:'10px',
-              color:'black'
+              margin: '10px',
+              color: 'white',
             }}
           >
-             Contact Us
-           
+            Contact Us
           </Typography>
-             
-            </Button>
-          </Box>
-        </CardContent>
-      </Card>
+        </Button>
+      </Box>
+
+      <Box sx={{ position: 'absolute', right: 0 }}>
+        <IconButton onClick={handleNextClick}>
+          <ArrowForwardIosIcon style={{ color: 'white' }} />
+        </IconButton>
+      </Box>
     </Box>
   );
 };
-
 
 
 const WhatWeOffer = () => {
@@ -155,9 +192,7 @@ const WhatWeOffer = () => {
               transition: 'transform 0.3s ease-in-out',
               '&:hover': {
                 transform: 'scale(1.05)',
-                '& .underline': {
-                  width: '100%'
-                }
+               
               },
               '@media (hover: none)': {
                 '&:active': {
@@ -202,9 +237,7 @@ const WhatWeOffer = () => {
               transition: 'transform 0.3s ease-in-out',
               '&:hover': {
                 transform: 'scale(1.05)',
-                '& .underline': {
-                  width: '100%'
-                }
+                
               },
               '@media (hover: none)': {
                 '&:active': {
@@ -248,9 +281,7 @@ const WhatWeOffer = () => {
               transition: 'transform 0.3s ease-in-out',
               '&:hover': {
                 transform: 'scale(1.05)',
-                '& .underline': {
-                  width: '100%'
-                }
+               
               },
               '@media (hover: none)': {
                 '&:active': {
@@ -294,9 +325,7 @@ const WhatWeOffer = () => {
               transition: 'transform 0.3s ease-in-out',
               '&:hover': {
                 transform: 'scale(1.05)',
-                '& .underline': {
-                  width: '100%'
-                }
+             
               },
               '@media (hover: none)': {
                 '&:active': {
@@ -338,179 +367,6 @@ const WhatWeOffer = () => {
   );
 };
 
-const SuccessStory = () => {
-  const handleImageClick = () => {
-    window.open('https://www.flaticon.com/packs/renewable-energy-16947170', '_blank');
-  };
-
-  return (
-    <Box 
-      sx={{ 
-        position: 'relative', 
-        height: '500px',
-        marginTop: '100px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}
-    >
-      {/* Background Image */}
-      <Box 
-        sx={{ 
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: 1,
-          overflow: 'hidden',
-          '& img': {
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }
-        }}
-      >
-        <img src={jutcultureimg} alt="Jute Products" />
-      </Box>
-
-      {/* Content Box */}
-      <Box
-        sx={{ 
-          position: 'relative', 
-          zIndex: 2,
-          backgroundColor: 'rgba(255, 255, 255, 0.8)', 
-          borderRadius: '10px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-          padding: { xs: '5px', md: '20px' },
-          width: { xs: '90%', md: '60%' },
-          maxHeight: { xs: '95%', md: '60%' },
-          
-        }}
-      >
-        <CardContent>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <Typography 
-              variant="h6" 
-              fontWeight="medium" 
-              sx={{ 
-                fontFamily: 'Poppins',
-                color: 'black', 
-                textDecoration: 'none' 
-              }}
-            >
-              Our Achievements
-            </Typography>
-            {/* Achievements Section */}
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: '20px' }}>
-              {/* Achievement 1 */}
-              <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <Card sx={{ width: '40px', height: '40px', padding: '5px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
-                  <img
-                    src={jutenergyimg}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', border: '2px solid white', borderRadius: '10px' }}
-                    alt="Featured Product"
-                    onClick={handleImageClick}
-                  />
-                </Card>
-                <Typography 
-                  variant="h6" 
-                  fontWeight="medium" 
-                  sx={{ 
-                    fontFamily: 'Poppins',
-                    color: 'black', 
-                    textDecoration: 'none' 
-                  }}
-                >
-                  500K+ Meters 
-                </Typography>
-                <Typography 
-                  variant="body2" 
-                  fontWeight="medium" 
-                  sx={{ 
-                    fontFamily: 'Poppins',
-                    color: 'black', 
-                    textDecoration: 'none' 
-                  }}
-                >
-                  Jute Fabric Delivered
-                </Typography>
-              </Box>
-              <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', md: 'block' }, marginX: '10px' }} />
-              {/* Achievement 2 */}
-              <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <Card sx={{ width: '40px', height: '40px', padding: '5px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
-                  <img
-                    src={jutcompostimg}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', border: '2px solid white', borderRadius: '10px' }}
-                    alt="Featured Product"
-                    onClick={handleImageClick}
-                  />
-                </Card>
-                <Typography 
-                  variant="h6" 
-                  fontWeight="medium" 
-                  sx={{ 
-                    fontFamily: 'Poppins',
-                    color: 'black', 
-                    textDecoration: 'none' 
-                  }}
-                >
-                  200K+ Units 
-                </Typography>
-                <Typography 
-                  variant="body2" 
-                  fontWeight="medium" 
-                  sx={{ 
-                    fontFamily: 'Poppins',
-                    color: 'black', 
-                    textDecoration: 'none' 
-                  }}
-                >
-                  Custom Jute Products
-                </Typography>
-              </Box>
-              <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', md: 'block' }, marginX: '10px' }} />
-              {/* Achievement 3 */}
-              <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <Card sx={{ width: '40px', height: '40px', padding: '5px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
-                  <img
-                    src={jutnaturalresourcesimg}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', border: '2px solid white', borderRadius: '10px' }}
-                    alt="Featured Product"
-                    onClick={handleImageClick}
-                  />
-                </Card>
-                <Typography 
-                  variant="h6" 
-                  fontWeight="medium" 
-                  sx={{ 
-                    fontFamily: 'Poppins',
-                    color: 'black', 
-                    textDecoration: 'none' 
-                  }}
-                >
-                  Up to 95% 
-                </Typography>
-                <Typography 
-                  variant="body2" 
-                  fontWeight="medium" 
-                  sx={{ 
-                    fontFamily: 'Poppins',
-                    color: 'black', 
-                    textDecoration: 'none' 
-                  }}
-                >
-                  Customer Retention Rate
-                </Typography>
-              </Box>
-            </Box>
-          </Box>
-        </CardContent>
-      </Box>
-    </Box>
-  );
-};
 
 const FeaturedProducts = () => {
   const navigate = useNavigate();
@@ -548,38 +404,59 @@ const FeaturedProducts = () => {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          overflowX: 'auto',
+          flexWrap: 'wrap', // Allows items to wrap if they overflow
+          gap: '15px', // Adds spacing between items
           marginTop: '30px',
           padding: '10px',
-          '&::-webkit-scrollbar': {
-            display: 'none'
-          }
+          justifyContent: 'center', // Center items horizontally
         }}
       >
-        <Box
-           
+        {[
+          { src: jutegunnybag, alt: 'Gunny Bag', label: 'Jute Gunny Bags' },
+          { src: jutehessianclothe, alt: 'Jute Hessian Cloth', label: 'Jute Hessian Cloth' },
+          { src: juteyarn, alt: 'Jute Yarn 28/1', label: 'Jute Yarn 28/1' },
+          { src: juteyarn163, alt: 'Jute Yarn 16/3', label: 'Jute Yarn 16/3' },
+          { src: balingtwine, alt: 'Baling Twin Rope', label: 'Baling Twine Rope' },
+          { src: propylenebags, alt: 'Polypropylene Bags', label: 'Polypropylene Bags' },
+          { src: lenomeshbags, alt: 'LENO Mesh PP Bags', label: 'LENO Mesh PP Bags' },
+          { src: boppfilms, alt: 'BOPP Films', label: 'BOPP Films' },
+        ].map((product, index) => (
+          <Box
+            key={index}
             sx={{
-              minWidth: '300px',
-              margin: '0 10px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '10px',
+              width: '100%',
+              maxWidth: '350px', // Adjust the max width as needed
+              margin: 'auto',
               position: 'relative',
-              transition: 'transform 0.3s ease-in-out',
-              '&:hover': {
-                transform: 'scale(1.05)'
-              },
-              '@media (hover: none)': {
-                '&:active': {
-                  transform: 'scale(1.05)'
-                }
-              }
+              overflow: 'hidden',
             }}
           >
-            <img
-              src={jutegunnybag}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', border: '2px solid white', borderRadius: '10px' }}
-              alt="Gunny Bag"
-            />
+            <Box
+              sx={{
+                width: '100%',
+                height: '350px', // Fixed height for consistency
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                overflow: 'hidden',
+                border: '2px solid white',
+                borderRadius: '10px',
+              }}
+            >
+              <img
+                src={product.src}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover', // Ensures images cover the box while maintaining aspect ratio
+                }}
+                alt={product.alt}
+              />
+            </Box>
             <Box
               sx={{
                 position: 'absolute',
@@ -608,135 +485,16 @@ const FeaturedProducts = () => {
             >
               <img src={islandjuteimg} alt="Logo" style={{ height: '40px', width: '40px' }} />
               <Typography variant="h5" fontWeight="medium" sx={{ fontFamily: 'Poppins', mb: 2 }}>
-                Jute Gunny Bags
+                {product.label}
               </Typography>
               <Button variant="contained" color="primary" onClick={handleButtonClick}>
-                <Typography variant="body2"  sx={{ fontFamily: 'Poppins', mb: 2, margin: '2px'}}>
-                Learn More
-                </Typography>
-                
-              </Button>
-            </Box>
-          </Box>
-          <Box
-        
-            sx={{
-              minWidth: '300px',
-              margin: '0 10px',
-              position: 'relative',
-              transition: 'transform 0.3s ease-in-out',
-              '&:hover': {
-                transform: 'scale(1.05)'
-              },
-              '@media (hover: none)': {
-                '&:active': {
-                  transform: 'scale(1.05)'
-                }
-              }
-            }}
-          >
-            <img
-              src={jutehessianclothe}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', border: '2px solid white', borderRadius: '10px' }}
-              alt="Jute Hessian Cloth"
-            />
-            <Box
-              sx={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                backgroundColor: 'rgba(128, 128, 128, 0.5)',
-                color: 'white',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderRadius: '10px',
-                opacity: 0,
-                transition: 'opacity 0.3s ease-in-out',
-                '&:hover': {
-                  opacity: 1
-                },
-                '@media (hover: none)': {
-                  '&:active': {
-                    opacity: 1
-                  }
-                }
-              }}
-            >
-               <img src={islandjuteimg} alt="Logo" style={{ height: '40px', width: '40px' }} />
-              <Typography variant="h5" fontWeight="medium" sx={{ fontFamily: 'Poppins', mb: 2 }}>
-                Jute Hessian Cloth
-              </Typography>
-              <Button variant="contained" color="primary" onClick={handleButtonClick}>
-              <Typography variant="body2"  sx={{ fontFamily: 'Poppins', mb: 2, margin: '2px'}}>
-                Learn More
-                </Typography>
-                
-              </Button>
-            </Box>
-          </Box>
-          <Box
-          
-            sx={{
-              minWidth: '300px',
-              margin: '0 10px',
-              position: 'relative',
-              transition: 'transform 0.3s ease-in-out',
-              '&:hover': {
-                transform: 'scale(1.05)'
-              },
-              '@media (hover: none)': {
-                '&:active': {
-                  transform: 'scale(1.05)'
-                }
-              }
-            }}
-          >
-            <img
-              src={juteyarn}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', border: '2px solid white', borderRadius: '10px' }}
-              alt="Featured Product"
-            />
-            <Box
-              sx={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                backgroundColor: 'rgba(128, 128, 128, 0.5)',
-                color: 'white',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderRadius: '10px',
-                opacity: 0,
-                transition: 'opacity 0.3s ease-in-out',
-                '&:hover': {
-                  opacity: 1
-                },
-                '@media (hover: none)': {
-                  '&:active': {
-                    opacity: 1
-                  }
-                }
-              }}
-            >
-               <img src={islandjuteimg} alt="Logo" style={{ height: '40px', width: '40px' }} />
-              <Typography variant="h5" fontWeight="medium" sx={{ fontFamily: 'Poppins', mb: 2 }}>
-                Jute Yarn
-              </Typography>
-              <Button variant="contained" color="primary" onClick={handleButtonClick}>
-              <Typography variant="body2"  sx={{ fontFamily: 'Poppins', mb: 2, margin: '2px'}}>
-                Learn More
+                <Typography variant="body2" sx={{ fontFamily: 'Poppins', mb: 2, margin: '2px' }}>
+                  Learn More
                 </Typography>
               </Button>
             </Box>
           </Box>
+        ))}
       </Box>
     </Box>
   );
@@ -809,8 +567,112 @@ const Contact = () => {
   );
 };
 
+const AboutUs = () => {
+
+  const navigate = useNavigate();
+
+  const handleAboutUsClick = () => {
+    navigate('/aboutus');
+  };
+
+
+  return (
+    <>
+    <Box
+      sx={{
+        position: 'relative',
+        width: '100%',
+        marginTop: '120px',
+        height: '100vh',
+        backgroundImage: `url(${bullock})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    > 
+    
+       <Card
+        sx={{
+          position: 'absolute',
+          left: '5%',
+          top: '1%',
+          backgroundColor: 'rgba(255, 255, 255, 1)',
+          padding: 2,
+          marginLeft: '5%',
+          marginRight: '10%',
+          borderRadius:'25px',
+        }}
+      >
+        <CardContent>
+          <Typography variant="h6" component="div" gutterBottom style={{fontFamily: 'Poppins',}}>
+              Welcome to AJ Tradders
+          </Typography>
+          <Typography variant="body2" color="textSecondary" style={{fontFamily: 'Poppins',}}>
+          Established in 1980 and headquartered in the vibrant city of Colombo, AJ Tradders has been a cornerstone in the jute industry for over four decades. 
+          Our journey, built on a foundation of expertise and innovation, 
+          has positioned us as a trusted provider of eco-friendly packaging solutions to a diverse array of renowned companies worldwide.            
+          </Typography>
+          
+        </CardContent>
+
+        <CardContent style={{marginTop:'5px'}}>
+          <Typography variant="h6" component="div" gutterBottom style={{fontFamily: 'Poppins',}}>
+          Our Legacy
+          </Typography>
+          <Typography variant="body2" color="textSecondary" style={{fontFamily: 'Poppins',}}>
+          With over 40 years of experience, AJ Tradders has honed the art and science of producing high-quality jute products. 
+          Our deep-rooted commitment to sustainability drives us to offer solutions that not only meet the needs of our clients but also contribute positively to the environment. 
+          Our legacy is one of dedication, integrity, and a relentless pursuit of excellence.           
+          </Typography>
+          
+        </CardContent>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '20px',
+          }}
+        >
+          <Button
+            variant="outlined"
+            color="success"
+            onClick={handleAboutUsClick}
+            style={{ borderRadius: '25px', borderWidth: '3px' }}
+          >
+            <Typography
+              variant="body2"
+              fontWeight="medium"
+              sx={{
+                fontFamily: 'Poppins',
+                textDecoration: 'none',
+                margin: '10px',
+                color: 'black',
+              }}
+            >
+              Learn More About Us
+            </Typography>
+          </Button>
+        </Box>
+
+        
+
+       
+
+      </Card>
+    
+    
+     
+
+    
+    </Box>
+    
+    </>
+    
+  );
+};
+
+
   
   
 
 
-export { Details, WhatWeOffer, SuccessStory, FeaturedProducts,Contact};
+export { Details, WhatWeOffer, FeaturedProducts,Contact,AboutUs};

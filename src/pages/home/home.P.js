@@ -3,7 +3,7 @@ import React from 'react';
 import HeaderNavbar from '../../components/HeaderNavbar';
 import Footer from '../../components/Footer';
 import { Box } from '@mui/material';
-import { Contact, Details,  FeaturedProducts,  Journey, SuccessStory, WhatWeOffer } from './home.C';
+import { AboutUs, Contact, Details,  FeaturedProducts,  WhatWeOffer } from './home.C';
 
 const Home = () => {
 
@@ -17,12 +17,13 @@ const Home = () => {
           <div style={{marginBottom:'5px'}}>
           <Details/>
           </div>
+          <div style={{marginBottom:'5px'}}>
+          <AboutUs/>
+          </div>
           <div style={{marginBottom:'10px'}}>
           <WhatWeOffer/>
           </div>
-          <div style={{marginBottom:'10px'}}>
-          <SuccessStory/>
-          </div>
+          
           <div style={{marginBottom:'10px'}}>
           <FeaturedProducts/>
           </div>
