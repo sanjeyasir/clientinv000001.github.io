@@ -1,7 +1,7 @@
-// src/components/ProductGrid.js
+// src/pages/ProductDetailPage.js
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../../styles/ProductGrid.css'; // Optional for styling
+import { useParams } from 'react-router-dom';
+import '../../styles/ProductDetails.css'; // Optional for styling
 
 import jutegunnybag from '../../assets/jutegunnybags.jpg';//https://www.ebay.com/itm/224593886268
 import jutehessianclothe from '../../assets/jutehessiancloth.jpg';//https://www.amazon.co.uk/1m-100-Natural-Hessian-Fabric/dp/B08BZV5WFN?th=1
@@ -11,6 +11,7 @@ import boppfilms from '../../assets/boppfilms.jpg' //https://europlas.com.vn/en-
 import lenomeshbags from '../../assets/lenomeshbag.png' //https://europlas.com.vn/en-US/blog-1/what-is-bopp-plastic-film-bopp-film-manufacturing-process
 import balingtwine from '../../assets/balingtwine.png' //https://www.ehow.com/list_7343448_crafts-make-baling-twine.html
 import juteyarn163 from '../../assets/juteyarn163.jpg' //https://musajute.com/product/colour-jute-yarn/
+
 
 
 const products = [
@@ -64,20 +65,26 @@ const products = [
   },
 ];
 
-const ProductGrid = () => {
+const ProductDetailPage = (id) => {
+
+
+
+  
+  const product = products.find(p => p.id == parseInt(id.id, 10));
+
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+
   return (
-    <div className="product-grid">
-      {products.map((product) => (
-        <div key={product.id} className="product-card">
-          <Link to={`/products/${product.id}`}>
-            <img src={product.imageUrl} alt={product.name} className="product-image" />
-            <h2 className="product-name">{product.name}</h2>
-            <p className="product-description">{product.description}</p>
-          </Link>
-        </div>
-      ))}
+    <div className="product-detail">
+      <h1>{product.name}</h1>
+      <img src={product.imageUrl} alt={product.name} className="detail-image" />
+      <p>{product.description}</p>
     </div>
   );
+
 }
 
-export {ProductGrid};
+export {ProductDetailPage};

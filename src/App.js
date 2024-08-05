@@ -7,6 +7,7 @@ import ProductInformation from './pages/productInformation/productInformation.P'
 import Loading from './pages/loading/loading.P';
 import Contact from './pages/contact/contact.P';
 import AboutUs from './pages/aboutus/aboutus.P';
+import ProductInformationDetails from './pages/productInformationDetails/productInformationDetails.P';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/products" element={<ProductInformation />} />
+          <Route path="/products/:id" element={<ProductInformationDetails/>} />
           <Route path="/contacts" element={<Contact />} />
           
          

@@ -3,17 +3,23 @@ import React from 'react';
 import HeaderNavbar from '../../components/HeaderNavbar';
 import Footer from '../../components/Footer';
 import { Box } from '@mui/material';
-import { ProductGrid } from './productInformation.C';
+import { useParams } from 'react-router-dom';
+import { ProductDetailPage } from './productInformationDetails.C';
 
-const ProductInformation = () => {
 
+const ProductInformationDetails = () => {
+    
+    const { id } = useParams();
+   
   
     return (
       <>
        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <HeaderNavbar />
           <Box sx={{ flex: 1, marginBottom: '10px' }}>
-          <ProductGrid/>
+
+            <ProductDetailPage id={id}/>
+       
          
           </Box>
           <Footer/>
@@ -25,4 +31,4 @@ const ProductInformation = () => {
     );
   }
 
-export default ProductInformation;
+export default ProductInformationDetails;
