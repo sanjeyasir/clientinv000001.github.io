@@ -13,7 +13,11 @@ const ProductInformation = () => {
        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <HeaderNavbar />
           <Box sx={{ flex: 1, marginBottom: '10px' }}>
+          <div style={{marginTop:'65px'}}>
           <ProductGrid/>
+
+          </div>
+          
          
           </Box>
           <Footer/>
